@@ -3,10 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FF9A51C90DDEA18B3149B1D /* Pods_Housie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13948E98B6A518E0537D16C9 /* Pods_Housie.framework */; };
+		888BD72726B9492700956410 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888BD72626B9492700956410 /* User.swift */; };
+		888BD72A26B9497F00956410 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888BD72926B9497F00956410 /* House.swift */; };
+		888BD72E26B95F2C00956410 /* SuperMario256.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 888BD72D26B95F2C00956410 /* SuperMario256.ttf */; };
+		88B328E826B89BBE00CC22F8 /* Tasks_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B328E726B89BBE00CC22F8 /* Tasks_ViewController.swift */; };
+		88B328EB26B89BF000CC22F8 /* Stats_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B328EA26B89BF000CC22F8 /* Stats_ViewController.swift */; };
+		88B328EE26B89C1100CC22F8 /* Badges_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B328ED26B89C1100CC22F8 /* Badges_ViewController.swift */; };
+		88B328F126B89C2900CC22F8 /* Homes_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B328F026B89C2900CC22F8 /* Homes_ViewController.swift */; };
+		88B328F426B89C4600CC22F8 /* Settings_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B328F326B89C4600CC22F8 /* Settings_ViewController.swift */; };
+		88B328FF26B8AF4200CC22F8 /* Menu_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B328FE26B8AF4200CC22F8 /* Menu_ViewController.swift */; };
+		88B3290826B8D16B00CC22F8 /* CaviarDreams.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88B3290726B8D16B00CC22F8 /* CaviarDreams.ttf */; };
 		88DE139E26B8953200256EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DE139D26B8953200256EB1 /* AppDelegate.swift */; };
 		88DE13A026B8953200256EB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DE139F26B8953200256EB1 /* SceneDelegate.swift */; };
 		88DE13A226B8953200256EB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DE13A126B8953200256EB1 /* ViewController.swift */; };
@@ -16,6 +27,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13948E98B6A518E0537D16C9 /* Pods_Housie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Housie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AE37A251E932817A74B5765 /* Pods-Housie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Housie.debug.xcconfig"; path = "Target Support Files/Pods-Housie/Pods-Housie.debug.xcconfig"; sourceTree = "<group>"; };
+		888BD72626B9492700956410 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		888BD72926B9497F00956410 /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
+		888BD72D26B95F2C00956410 /* SuperMario256.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SuperMario256.ttf; sourceTree = "<group>"; };
+		88B328E726B89BBE00CC22F8 /* Tasks_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks_ViewController.swift; sourceTree = "<group>"; };
+		88B328EA26B89BF000CC22F8 /* Stats_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats_ViewController.swift; sourceTree = "<group>"; };
+		88B328ED26B89C1100CC22F8 /* Badges_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badges_ViewController.swift; sourceTree = "<group>"; };
+		88B328F026B89C2900CC22F8 /* Homes_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homes_ViewController.swift; sourceTree = "<group>"; };
+		88B328F326B89C4600CC22F8 /* Settings_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings_ViewController.swift; sourceTree = "<group>"; };
+		88B328FE26B8AF4200CC22F8 /* Menu_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu_ViewController.swift; sourceTree = "<group>"; };
+		88B3290726B8D16B00CC22F8 /* CaviarDreams.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams.ttf; sourceTree = "<group>"; };
 		88DE139A26B8953200256EB1 /* Housie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Housie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DE139D26B8953200256EB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88DE139F26B8953200256EB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +47,7 @@
 		88DE13A626B8953300256EB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88DE13A926B8953300256EB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88DE13AB26B8953300256EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4C3738F088D82B587C7F65E /* Pods-Housie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Housie.release.xcconfig"; path = "Target Support Files/Pods-Housie/Pods-Housie.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +55,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FF9A51C90DDEA18B3149B1D /* Pods_Housie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35E471646F0DFC0DEC955613 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13948E98B6A518E0537D16C9 /* Pods_Housie.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7EE530DF29F959535FD5742F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6AE37A251E932817A74B5765 /* Pods-Housie.debug.xcconfig */,
+				B4C3738F088D82B587C7F65E /* Pods-Housie.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		88DE139126B8953200256EB1 = {
 			isa = PBXGroup;
 			children = (
 				88DE139C26B8953200256EB1 /* Housie */,
 				88DE139B26B8953200256EB1 /* Products */,
+				7EE530DF29F959535FD5742F /* Pods */,
+				35E471646F0DFC0DEC955613 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +100,8 @@
 		88DE139C26B8953200256EB1 /* Housie */ = {
 			isa = PBXGroup;
 			children = (
+				888BD72D26B95F2C00956410 /* SuperMario256.ttf */,
+				88B3290726B8D16B00CC22F8 /* CaviarDreams.ttf */,
 				88DE139D26B8953200256EB1 /* AppDelegate.swift */,
 				88DE139F26B8953200256EB1 /* SceneDelegate.swift */,
 				88DE13A126B8953200256EB1 /* ViewController.swift */,
@@ -63,6 +109,14 @@
 				88DE13A626B8953300256EB1 /* Assets.xcassets */,
 				88DE13A826B8953300256EB1 /* LaunchScreen.storyboard */,
 				88DE13AB26B8953300256EB1 /* Info.plist */,
+				88B328E726B89BBE00CC22F8 /* Tasks_ViewController.swift */,
+				88B328EA26B89BF000CC22F8 /* Stats_ViewController.swift */,
+				88B328ED26B89C1100CC22F8 /* Badges_ViewController.swift */,
+				88B328F026B89C2900CC22F8 /* Homes_ViewController.swift */,
+				88B328F326B89C4600CC22F8 /* Settings_ViewController.swift */,
+				88B328FE26B8AF4200CC22F8 /* Menu_ViewController.swift */,
+				888BD72626B9492700956410 /* User.swift */,
+				888BD72926B9497F00956410 /* House.swift */,
 			);
 			path = Housie;
 			sourceTree = "<group>";
@@ -74,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88DE13AE26B8953300256EB1 /* Build configuration list for PBXNativeTarget "Housie" */;
 			buildPhases = (
+				0AD4676C226B9668B5F3B60F /* [CP] Check Pods Manifest.lock */,
 				88DE139626B8953200256EB1 /* Sources */,
 				88DE139726B8953200256EB1 /* Frameworks */,
 				88DE139826B8953200256EB1 /* Resources */,
+				EED7CAF069D191E41E389F93 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,21 +181,73 @@
 			buildActionMask = 2147483647;
 			files = (
 				88DE13AA26B8953300256EB1 /* LaunchScreen.storyboard in Resources */,
+				888BD72E26B95F2C00956410 /* SuperMario256.ttf in Resources */,
 				88DE13A726B8953300256EB1 /* Assets.xcassets in Resources */,
+				88B3290826B8D16B00CC22F8 /* CaviarDreams.ttf in Resources */,
 				88DE13A526B8953200256EB1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0AD4676C226B9668B5F3B60F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Housie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EED7CAF069D191E41E389F93 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Housie/Pods-Housie-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Housie/Pods-Housie-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Housie/Pods-Housie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		88DE139626B8953200256EB1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88B328EB26B89BF000CC22F8 /* Stats_ViewController.swift in Sources */,
 				88DE13A226B8953200256EB1 /* ViewController.swift in Sources */,
+				88B328F126B89C2900CC22F8 /* Homes_ViewController.swift in Sources */,
+				88B328EE26B89C1100CC22F8 /* Badges_ViewController.swift in Sources */,
+				88B328E826B89BBE00CC22F8 /* Tasks_ViewController.swift in Sources */,
 				88DE139E26B8953200256EB1 /* AppDelegate.swift in Sources */,
 				88DE13A026B8953200256EB1 /* SceneDelegate.swift in Sources */,
+				88B328FF26B8AF4200CC22F8 /* Menu_ViewController.swift in Sources */,
+				888BD72726B9492700956410 /* User.swift in Sources */,
+				888BD72A26B9497F00956410 /* House.swift in Sources */,
+				88B328F426B89C4600CC22F8 /* Settings_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,8 +391,9 @@
 		};
 		88DE13AF26B8953300256EB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AE37A251E932817A74B5765 /* Pods-Housie.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = housie_app_icon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CMCESWENEQ;
@@ -296,14 +405,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyberfacility.Housie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		88DE13B026B8953300256EB1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4C3738F088D82B587C7F65E /* Pods-Housie.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = housie_app_icon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CMCESWENEQ;
@@ -315,7 +425,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyberfacility.Housie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

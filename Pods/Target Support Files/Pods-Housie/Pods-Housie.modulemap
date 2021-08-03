@@ -1,0 +1,6 @@
+framework module Pods_Housie {
+  umbrella header "Pods-Housie-umbrella.h"
+
+  export *
+  module * { export * }
+}

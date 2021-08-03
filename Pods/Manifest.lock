@@ -1,0 +1,28 @@
+PODS:
+  - CountdownLabel (4.0.1)
+  - LTMorphingLabel (0.9.3)
+  - SideMenu (6.5.0)
+  - UIGradient (1.3.2)
+
+DEPENDENCIES:
+  - CountdownLabel
+  - LTMorphingLabel
+  - SideMenu
+  - UIGradient
+
+SPEC REPOS:
+  trunk:
+    - CountdownLabel
+    - LTMorphingLabel
+    - SideMenu
+    - UIGradient
+
+SPEC CHECKSUMS:
+  CountdownLabel: c9975e3f329140b5e7d1f45cd63b1300badd1712
+  LTMorphingLabel: f2b256e4fe665aac27f0d0e8ccdcd79590f0cd70
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+  UIGradient: 2364e9ebac232686db220713b4d42a68222fffb2
+
+PODFILE CHECKSUM: 5e0301fac5c28469d71d3753a9c1fb40b80cdc59
+
+COCOAPODS: 1.10.1

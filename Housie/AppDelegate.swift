@@ -10,11 +10,53 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    static var currentUser: User?
+    var datamodel = ModelData()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let defaults = UserDefaults.standard
+        if defaults.string(forKey: "id") == nil{
+            print("New User!")
+            defaults.setValue("1", forKey: "id")
+            defaults.setValue("0", forKey: "coins")
+            defaults.set([String](), forKey: "ownhouses")
+
+            datamodel.mapHousesintoarray()
+            AppDelegate.currentUser = User(id: "1", coins: 0)
+        } else {
+            print("User exists!")
+            let id = defaults.string(forKey: "id")
+            let coins = defaults.integer(forKey: "coins")
+            AppDelegate.currentUser = User(id: id!, coins: coins)
+            AppDelegate.currentUser?.listOfUnlockedHouses = defaults.object(forKey:"ownhouses") as? [String] ?? [String]()
+            AppDelegate.currentUser?.costsOfUnlockedHouses = defaults.object(forKey:"costsofhouses") as? [Int] ?? [Int]()
+            
+            mapHousesToIds(houseslist: AppDelegate.currentUser!.listOfUnlockedHouses, pricelist: AppDelegate.currentUser!.costsOfUnlockedHouses)
+            
+        }
+        
         return true
+    }
+    
+    func mapHousesToIds(houseslist: [String], pricelist: [Int]) {
+        var index = 0
+        for haus in datamodel.houses {
+            haus.remainingPrice = pricelist[index]
+            haus.unlocked = checkIfUnlocked(houselist: houseslist, currenthaus: haus)
+            AppDelegate.currentUser!.listOfHouses.append(haus)
+            index+=1
+        }
+    }
+    
+    func checkIfUnlocked(houselist: [String], currenthaus: House) -> Bool {
+        for haus in houselist {
+            if (haus == currenthaus.id) {
+                return true
+            }
+        }
+        return false
     }
 
     // MARK: UISceneSession Lifecycle
