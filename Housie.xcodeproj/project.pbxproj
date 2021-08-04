@@ -24,6 +24,12 @@
 		88DE13A526B8953200256EB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DE13A326B8953200256EB1 /* Main.storyboard */; };
 		88DE13A726B8953300256EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88DE13A626B8953300256EB1 /* Assets.xcassets */; };
 		88DE13AA26B8953300256EB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DE13A826B8953300256EB1 /* LaunchScreen.storyboard */; };
+		88E5E80D26B9E58100AF82EB /* HouseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5E80C26B9E58100AF82EB /* HouseCell.swift */; };
+		88E5E81A26B9FB1600AF82EB /* HDNotificationViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5E81726B9FB1600AF82EB /* HDNotificationViewAppearance.swift */; };
+		88E5E81B26B9FB1600AF82EB /* HDNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5E81826B9FB1600AF82EB /* HDNotificationData.swift */; };
+		88E5E81C26B9FB1600AF82EB /* HDNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5E81926B9FB1600AF82EB /* HDNotificationView.swift */; };
+		88E5E82C26BA119A00AF82EB /* BadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5E82B26BA119A00AF82EB /* BadgeCell.swift */; };
+		88E5E82F26BA121900AF82EB /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5E82E26BA121900AF82EB /* Badge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +53,12 @@
 		88DE13A626B8953300256EB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88DE13A926B8953300256EB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88DE13AB26B8953300256EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88E5E80C26B9E58100AF82EB /* HouseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseCell.swift; sourceTree = "<group>"; };
+		88E5E81726B9FB1600AF82EB /* HDNotificationViewAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDNotificationViewAppearance.swift; sourceTree = "<group>"; };
+		88E5E81826B9FB1600AF82EB /* HDNotificationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDNotificationData.swift; sourceTree = "<group>"; };
+		88E5E81926B9FB1600AF82EB /* HDNotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDNotificationView.swift; sourceTree = "<group>"; };
+		88E5E82B26BA119A00AF82EB /* BadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCell.swift; sourceTree = "<group>"; };
+		88E5E82E26BA121900AF82EB /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		B4C3738F088D82B587C7F65E /* Pods-Housie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Housie.release.xcconfig"; path = "Target Support Files/Pods-Housie/Pods-Housie.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +112,9 @@
 		88DE139C26B8953200256EB1 /* Housie */ = {
 			isa = PBXGroup;
 			children = (
+				88E5E81826B9FB1600AF82EB /* HDNotificationData.swift */,
+				88E5E81926B9FB1600AF82EB /* HDNotificationView.swift */,
+				88E5E81726B9FB1600AF82EB /* HDNotificationViewAppearance.swift */,
 				888BD72D26B95F2C00956410 /* SuperMario256.ttf */,
 				88B3290726B8D16B00CC22F8 /* CaviarDreams.ttf */,
 				88DE139D26B8953200256EB1 /* AppDelegate.swift */,
@@ -117,6 +132,9 @@
 				88B328FE26B8AF4200CC22F8 /* Menu_ViewController.swift */,
 				888BD72626B9492700956410 /* User.swift */,
 				888BD72926B9497F00956410 /* House.swift */,
+				88E5E80C26B9E58100AF82EB /* HouseCell.swift */,
+				88E5E82B26BA119A00AF82EB /* BadgeCell.swift */,
+				88E5E82E26BA121900AF82EB /* Badge.swift */,
 			);
 			path = Housie;
 			sourceTree = "<group>";
@@ -238,16 +256,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B328EB26B89BF000CC22F8 /* Stats_ViewController.swift in Sources */,
+				88E5E82F26BA121900AF82EB /* Badge.swift in Sources */,
 				88DE13A226B8953200256EB1 /* ViewController.swift in Sources */,
 				88B328F126B89C2900CC22F8 /* Homes_ViewController.swift in Sources */,
 				88B328EE26B89C1100CC22F8 /* Badges_ViewController.swift in Sources */,
 				88B328E826B89BBE00CC22F8 /* Tasks_ViewController.swift in Sources */,
 				88DE139E26B8953200256EB1 /* AppDelegate.swift in Sources */,
+				88E5E81B26B9FB1600AF82EB /* HDNotificationData.swift in Sources */,
 				88DE13A026B8953200256EB1 /* SceneDelegate.swift in Sources */,
 				88B328FF26B8AF4200CC22F8 /* Menu_ViewController.swift in Sources */,
+				88E5E81C26B9FB1600AF82EB /* HDNotificationView.swift in Sources */,
 				888BD72726B9492700956410 /* User.swift in Sources */,
 				888BD72A26B9497F00956410 /* House.swift in Sources */,
+				88E5E80D26B9E58100AF82EB /* HouseCell.swift in Sources */,
+				88E5E82C26BA119A00AF82EB /* BadgeCell.swift in Sources */,
 				88B328F426B89C4600CC22F8 /* Settings_ViewController.swift in Sources */,
+				88E5E81A26B9FB1600AF82EB /* HDNotificationViewAppearance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

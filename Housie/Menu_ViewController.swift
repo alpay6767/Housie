@@ -9,9 +9,13 @@ import Foundation
 import UIKit
 import SideMenu
 
+
 class Menu_ViewController: UITableViewController {
     
     var selectedIndex = 0
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +28,16 @@ class Menu_ViewController: UITableViewController {
         
         //MARK: do something when user presses menu item!
         
-        let menuview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homes_vc") as! Homes_ViewController
-        
         let nc = self.navigationController?.presentingViewController as! UINavigationController
         let ncroot = nc.viewControllers[0] as! ViewController
+                
+        
+        let currentSide = ncroot.children[ncroot.children.count-1]
+        print("CurrentChild: " + currentSide.description)
+        if (currentSide is Tasks_ViewController) {
+            let tasksvc = currentSide as! Tasks_ViewController
+            tasksvc.label.cancel()
+        }
         
         
         switch indexPath.row {
@@ -55,19 +65,8 @@ class Menu_ViewController: UITableViewController {
             })
             
             break
+
         case 1:
-            
-            let menuview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "stats_vc") as! Stats_ViewController
-            SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {
-                
-                menuview.willMove(toParent: ncroot)
-                menuview.view.frame = ncroot.containerView.bounds
-                ncroot.containerView.addSubview(menuview.view)
-                ncroot.addChild(menuview)
-                menuview.didMove(toParent: ncroot)
-            })
-            break
-        case 2:
             
             let menuview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "badges_vc") as! Badges_ViewController
             SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {
@@ -79,7 +78,7 @@ class Menu_ViewController: UITableViewController {
                 menuview.didMove(toParent: ncroot)
             })
             break
-        case 3:
+        case 2:
             
             let menuview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homes_vc") as! Homes_ViewController
             SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {
@@ -91,7 +90,7 @@ class Menu_ViewController: UITableViewController {
                 menuview.didMove(toParent: ncroot)
             })
             break
-        case 4:
+        case 3:
             
             let menuview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "settings_vc") as! Settings_ViewController
             SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {

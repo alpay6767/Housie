@@ -2,17 +2,38 @@ import UIKit
 import SideMenu
 import UIGradient
 import CountdownLabel
+import BLTNBoard
+
 
 class Tasks_ViewController: UIViewController, CountdownLabelDelegate, LTMorphingLabelDelegate {
+    
+    lazy var bulletinManager: BLTNItemManager = {
+        
+        let page = BLTNPageItem(title: "Loan paying started! " + " 🥳")
+        page.image = #imageLiteral(resourceName: "working")
+
+        page.descriptionText = "Every 20 seconds 500$ will be payed off! Good luck on all your tasks. You can do it! ✊"
+        page.actionButtonTitle = "Let's Go"
+        page.actionHandler = { (item: BLTNActionItem) in
+            self.vibratePhone()
+            item.manager?.dismissBulletin(animated: true)
+        }
+        let rootItem: BLTNItem = page
+        return BLTNItemManager(rootItem: rootItem)
+        }()
  
     @IBOutlet weak var hauscosts: UILabel!
     @IBOutlet weak var hausname: UILabel!
     @IBOutlet weak var hausimage: UIImageView!
+    @IBOutlet weak var bg: UIImageView!
     @IBOutlet weak var coins: UILabel!
     let modeldata = ModelData()
     
     @IBOutlet weak var startbtn: UIButton!
     var currentHaus: House?
+    
+    static var active = true
+    static var selecteHouseIndex = 0
     
     @IBOutlet weak var label: CountdownLabel!
     var menu: SideMenuNavigationController?
@@ -27,39 +48,67 @@ class Tasks_ViewController: UIViewController, CountdownLabelDelegate, LTMorphing
         label.setCountDownTime(minutes: 60*25)
         label.font = UIFont(name:"CaviarDreams", size:50)
         label.delegate = self
+        label.pause()
 
         //label.start()
         
         //setcurrent hause:
-        currentHaus = AppDelegate.currentUser?.listOfHouses[0]
+        currentHaus = AppDelegate.currentUser?.listOfHouses[Tasks_ViewController.selecteHouseIndex]
         
         label.countdownDelegate = self
         coins.text = AppDelegate.currentUser?.coins!.description
         hausname.text = currentHaus!.name
-        hauscosts.text = (currentHaus!.price!.description) + " / " + (currentHaus!.remainingPrice!.description)
+        hauscosts.text = (currentHaus!.price!.description) + "$" + " / " + (currentHaus!.remainingPrice!.description) + "$"
+        hausimage.image = currentHaus?.image
 
         
     }
     
     @IBAction func start(_ sender: Any) {
         // check if pause or not
-        if label.isPaused {
-            // timer start
-            startbtn.setImage(UIImage(named: "stopbtn"), for: .normal)
-            label.start()
-        } else {
+        vibratePhone()
+        vibratePhoneMedium()
+        
+        if !label.isPaused{
             // timer pause
+            bg.image = UIImage(named: "bgwithclouds")
             startbtn.setImage(UIImage(named: "startbtn"), for: .normal)
             label.pause()
+            
+            /*let notiData = HDNotificationData(
+                iconImage: UIImage(systemName: "clock.fill")?.withTintColor(.black),
+                        appTitle: "Housie".uppercased(),
+                title: "Loan paying stopped!" + " 😯",
+                        message: "Cmon don't give up! You can always start it again! 💪",
+                        time: "now")
+                    
+            HDNotificationView.show(data: notiData, onTap: nil, onDidDismiss: nil)*/
+            
+        } else {
+            // timer start
+            bg.image = UIImage(named: "bg_active")
+            startbtn.setImage(UIImage(named: "stopbtn"), for: .normal)
+            label.start()
+            
+            /*let notiData = HDNotificationData(
+                iconImage: UIImage(systemName: "clock.fill")?.withTintColor(.black),
+                        appTitle: "Housie".uppercased(),
+                title: "Loan paying started! " + " 🥳",
+                        message: "Good luck on all your tasks. You can do it! ✊",
+                        time: "now")
+                    
+            HDNotificationView.show(data: notiData, onTap: nil, onDidDismiss: nil)
+ */
+            bulletinManager.showBulletin(above: self)
         }
         
     }
     @IBAction func timerdown(_ sender: Any) {
-        label.addTime(time: -60)
+        label.addTime(time: -60.0)
     }
     
     @IBAction func timerup(_ sender: Any) {
-        label.addTime(time: 60)
+        label.addTime(time: 60.0)
     }
     
     
@@ -68,7 +117,7 @@ class Tasks_ViewController: UIViewController, CountdownLabelDelegate, LTMorphing
         self.present(menu!, animated: true) {
             
         }
-        showTimeCountedAlert()
+        //showTimeCountedAlert()
         
     }
     
@@ -85,24 +134,37 @@ class Tasks_ViewController: UIViewController, CountdownLabelDelegate, LTMorphing
     func countingAt(timeCounted: TimeInterval, timeRemaining: TimeInterval) {
         //print("Time Counted: " + timeCounted.description)
         
-        let modulo = Int(timeCounted)%20
-        print(modulo.description)
+        if (!Tasks_ViewController.active) {
+            label.cancel()
+        } else {
         
-        if modulo == 0 {
-            updateView()
+            let modulo = Int(timeCounted)%20
+            print(modulo.description)
+        
+            if modulo == 0 && timeCounted != 0 {
+                updateView()
+            }
+        
         }
-        
         
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        label.cancel()
+        label.pause()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        label.pause()
     }
  
     func updateView() {
         currentHaus?.remainingPrice = (currentHaus?.remainingPrice)!-1000
-        hauscosts.text = (currentHaus!.price!.description) + " / " + (currentHaus!.remainingPrice!.description)
+        if (currentHaus?.remainingPrice)! <= 0 {
+            currentHaus?.remainingPrice = 0
+        }
+        hauscosts.text = (currentHaus!.price!.description) + "$" + " / " + (currentHaus!.remainingPrice!.description) + "$"
         mapHousesintoarray()
         
     }

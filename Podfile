@@ -9,8 +9,12 @@ target 'Housie' do
   
   pod 'UIGradient'
   pod 'SideMenu'
-  pod 'LTMorphingLabel'
   pod 'CountdownLabel'
+  pod 'UICircularProgressRing'
+  pod 'SnapKit'
+  pod 'Google-Mobile-Ads-SDK'
+  pod 'BulletinBoard'
+
 
 
 end
