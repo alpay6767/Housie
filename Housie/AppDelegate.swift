@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleMobileAds
+import DefaultsKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,18 +27,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         datamodel = ModelData()
         
         let defaults = UserDefaults.standard
+        let defaultsdiff = Defaults()
         if defaults.string(forKey: "id") == nil{
             print("New User!")
             defaults.setValue("1", forKey: "id")
             defaults.setValue("0", forKey: "coins")
             defaults.setValue(true, forKey: "firsttime")
             defaults.set([String](), forKey: "ownhouses")
+            let key = Key<[Event]>("ereignisse")
+
+            defaultsdiff.set([Event](), for: key)
 
             datamodel.mapHousesintoarray()
             AppDelegate.currentUser = User(id: "1", coins: 0)
             
             AppDelegate.currentUser?.listOfUnlockedHouses = defaults.object(forKey:"ownhouses") as? [String] ?? [String]()
             AppDelegate.currentUser?.costsOfUnlockedHouses = defaults.object(forKey:"costsofhouses") as? [Int] ?? [Int]()
+            AppDelegate.currentUser?.eventslist = defaultsdiff.get(for: key)!
             mapHousesToIds(houseslist: AppDelegate.currentUser!.listOfUnlockedHouses, pricelist: AppDelegate.currentUser!.costsOfUnlockedHouses)
             
             
@@ -45,9 +51,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("User exists!")
             let id = defaults.string(forKey: "id")
             let coins = defaults.integer(forKey: "coins")
+            let key = Key<[Event]>("ereignisse")
+
+            datamodel.mapHousesintoarray()
             AppDelegate.currentUser = User(id: id!, coins: coins)
             AppDelegate.currentUser?.listOfUnlockedHouses = defaults.object(forKey:"ownhouses") as? [String] ?? [String]()
             AppDelegate.currentUser?.costsOfUnlockedHouses = defaults.object(forKey:"costsofhouses") as? [Int] ?? [Int]()
+            AppDelegate.currentUser?.eventslist = defaultsdiff.get(for: key)!
             
             mapHousesToIds(houseslist: AppDelegate.currentUser!.listOfUnlockedHouses, pricelist: AppDelegate.currentUser!.costsOfUnlockedHouses)
             let notiData = HDNotificationData(

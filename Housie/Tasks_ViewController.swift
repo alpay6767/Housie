@@ -12,7 +12,7 @@ class Tasks_ViewController: UIViewController, CountdownLabelDelegate, LTMorphing
         let page = BLTNPageItem(title: "Loan paying started! " + " 🥳")
         page.image = #imageLiteral(resourceName: "working")
 
-        page.descriptionText = "Every 20 seconds 500$ will be payed off! Good luck on all your tasks. You can do it! ✊"
+        page.descriptionText = "Every 20 seconds 1000$ will be payed off! Good luck on all your tasks. You can do it! ✊"
         page.actionButtonTitle = "Let's Go"
         page.actionHandler = { (item: BLTNActionItem) in
             self.vibratePhone()
@@ -83,6 +83,22 @@ class Tasks_ViewController: UIViewController, CountdownLabelDelegate, LTMorphing
                         time: "now")
                     
             HDNotificationView.show(data: notiData, onTap: nil, onDidDismiss: nil)*/
+                            
+                let page = BLTNPageItem(title: "Coffee break time! " + " 🥳")
+                page.image = #imageLiteral(resourceName: "pause")
+
+                page.descriptionText = "Don't forget to take breaks! You can start paying the loans again!"
+                page.actionButtonTitle = "Have a break"
+                page.actionHandler = { (item: BLTNActionItem) in
+                    self.vibratePhone()
+                    item.manager?.dismissBulletin(animated: true)
+                }
+                let rootItem: BLTNItem = page
+            
+            bulletinManager = BLTNItemManager(rootItem: rootItem)
+            bulletinManager.showBulletin(above: self)
+            //bulletinManager.push(item: rootItem)
+
             
         } else {
             // timer start
@@ -99,6 +115,19 @@ class Tasks_ViewController: UIViewController, CountdownLabelDelegate, LTMorphing
                     
             HDNotificationView.show(data: notiData, onTap: nil, onDidDismiss: nil)
  */
+            
+            let page = BLTNPageItem(title: "Loan paying started! " + " 🥳")
+            page.image = #imageLiteral(resourceName: "working")
+
+            page.descriptionText = "Every 20 seconds " + currentHaus!.step!.description + "$ will be payed off! Good luck on all your tasks. You can do it! ✊"
+            page.actionButtonTitle = "Let's Go"
+            page.actionHandler = { (item: BLTNActionItem) in
+                self.vibratePhone()
+                item.manager?.dismissBulletin(animated: true)
+            }
+            let rootItem: BLTNItem = page
+            
+            bulletinManager = BLTNItemManager(rootItem: rootItem)
             bulletinManager.showBulletin(above: self)
         }
         
@@ -145,6 +174,8 @@ class Tasks_ViewController: UIViewController, CountdownLabelDelegate, LTMorphing
                 updateView()
             }
         
+            
+            AppDelegate.currentUser?.addOrUpdateEvent(additionaltime: 1, additionalpayment: 0, date: getStringDate(currentdate: Date()))
         }
         
     }
@@ -160,12 +191,34 @@ class Tasks_ViewController: UIViewController, CountdownLabelDelegate, LTMorphing
     }
  
     func updateView() {
-        currentHaus?.remainingPrice = (currentHaus?.remainingPrice)!-1000
+        
+        if currentHaus?.remainingPrice == 0 {
+            //nothing
+        } else {
+        
+            currentHaus?.remainingPrice = (currentHaus?.remainingPrice)!-currentHaus!.step!
         if (currentHaus?.remainingPrice)! <= 0 {
             currentHaus?.remainingPrice = 0
+            
+            let page = BLTNPageItem(title: currentHaus!.name! + " is finally payed! " + " 🥳")
+            page.image = #imageLiteral(resourceName: "working")
+
+            page.descriptionText = "You completly payed the loans for it! You are insane ✊"
+            page.actionButtonTitle = "Nice"
+            page.actionHandler = { (item: BLTNActionItem) in
+                self.vibratePhone()
+                item.manager?.dismissBulletin(animated: true)
+            }
+            let rootItem: BLTNItem = page
+            
+            bulletinManager = BLTNItemManager(rootItem: rootItem)
+            bulletinManager.showBulletin(above: self)
+            
         }
         hauscosts.text = (currentHaus!.price!.description) + "$" + " / " + (currentHaus!.remainingPrice!.description) + "$"
         mapHousesintoarray()
+            AppDelegate.currentUser?.addOrUpdateEvent(additionaltime: 0, additionalpayment: currentHaus!.step!, date: getStringDate(currentdate: Date()))
+        }
         
     }
     

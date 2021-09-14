@@ -68,7 +68,7 @@ class Menu_ViewController: UITableViewController {
 
         case 1:
             
-            let menuview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "badges_vc") as! Badges_ViewController
+            let menuview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "statsvc") as! Stats_ViewController
             SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {
                 
                 menuview.willMove(toParent: ncroot)
@@ -80,7 +80,7 @@ class Menu_ViewController: UITableViewController {
             break
         case 2:
             
-            let menuview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homes_vc") as! Homes_ViewController
+            let menuview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "badges_vc") as! Badges_ViewController
             SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {
                 
                 menuview.willMove(toParent: ncroot)
@@ -91,6 +91,18 @@ class Menu_ViewController: UITableViewController {
             })
             break
         case 3:
+            
+            let menuview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homes_vc") as! Homes_ViewController
+            SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {
+                
+                menuview.willMove(toParent: ncroot)
+                menuview.view.frame = ncroot.containerView.bounds
+                ncroot.containerView.addSubview(menuview.view)
+                ncroot.addChild(menuview)
+                menuview.didMove(toParent: ncroot)
+            })
+            break
+        case 4:
             
             let menuview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "settings_vc") as! Settings_ViewController
             SideMenuManager.default.leftMenuNavigationController?.dismiss(animated: true, completion: {

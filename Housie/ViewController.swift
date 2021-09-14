@@ -10,9 +10,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     lazy var bulletinManager: BLTNItemManager = {
         
         let page = BLTNPageItem(title: "Time to pay off these loans!")
-        page.image = #imageLiteral(resourceName: "h2")
+        page.image = #imageLiteral(resourceName: "i3")
 
-        page.descriptionText = "Focus on your tasks while paying off loans of houses of famous people!"
+        page.descriptionText = "Focus on your tasks while paying off loans of cool stuff!"
         page.actionButtonTitle = "Let's start"
         page.actionHandler = { (item: BLTNActionItem) in
             self.vibratePhone()
@@ -33,7 +33,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
 
         addBannerViewToView(bannerView)
         
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = "ca-app-pub-7177574010293341/4536843633"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         bannerView.delegate = self

@@ -14,6 +14,9 @@ target 'Housie' do
   pod 'SnapKit'
   pod 'Google-Mobile-Ads-SDK'
   pod 'BulletinBoard'
+  pod 'FSCalendar'
+  pod 'DefaultsKit'
+
 
 
 

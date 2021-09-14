@@ -1,6 +1,8 @@
 PODS:
   - BulletinBoard (5.0.0)
   - CountdownLabel (4.0.1)
+  - DefaultsKit (0.2.0)
+  - FSCalendar (2.8.2)
   - Google-Mobile-Ads-SDK (8.6.0):
     - GoogleAppMeasurement (< 9.0, >= 7.0)
     - GoogleUserMessagingPlatform (>= 1.1)
@@ -49,6 +51,8 @@ PODS:
 DEPENDENCIES:
   - BulletinBoard
   - CountdownLabel
+  - DefaultsKit
+  - FSCalendar
   - Google-Mobile-Ads-SDK
   - SideMenu
   - SnapKit
@@ -59,6 +63,8 @@ SPEC REPOS:
   trunk:
     - BulletinBoard
     - CountdownLabel
+    - DefaultsKit
+    - FSCalendar
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUserMessagingPlatform
@@ -73,6 +79,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   BulletinBoard: dba77053c2a7b64953f63073f7534165af2edd21
   CountdownLabel: c9975e3f329140b5e7d1f45cd63b1300badd1712
+  DefaultsKit: 6c767941b2c3fe34c4d70e300e6c3b80c94964dd
+  FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   Google-Mobile-Ads-SDK: 0d6e2e065c4efe9836bca3fbd6ff9ef0bca073c2
   GoogleAppMeasurement: 31c7d7655818784b7dd34bdf6884f75b465d5f6c
   GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
@@ -84,6 +92,6 @@ SPEC CHECKSUMS:
   UICircularProgressRing: 19927375b2b21b5fa5fd9582f15ccdef9659da16
   UIGradient: 2364e9ebac232686db220713b4d42a68222fffb2
 
-PODFILE CHECKSUM: 3a51f649821226e5aff461567b81a212d1018b1f
+PODFILE CHECKSUM: 29200a84371f86368ae16bff528d776525bcbf94
 
 COCOAPODS: 1.10.1

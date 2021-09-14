@@ -177,6 +177,8 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/BulletinBoard/BLTNBoard.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CountdownLabel/CountdownLabel.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DefaultsKit/DefaultsKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework"
@@ -188,6 +190,8 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/BulletinBoard/BLTNBoard.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CountdownLabel/CountdownLabel.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DefaultsKit/DefaultsKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework"

@@ -18,6 +18,7 @@
 		88B328F426B89C4600CC22F8 /* Settings_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B328F326B89C4600CC22F8 /* Settings_ViewController.swift */; };
 		88B328FF26B8AF4200CC22F8 /* Menu_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B328FE26B8AF4200CC22F8 /* Menu_ViewController.swift */; };
 		88B3290826B8D16B00CC22F8 /* CaviarDreams.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88B3290726B8D16B00CC22F8 /* CaviarDreams.ttf */; };
+		88C2A27926BC0BD300EE613D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C2A27826BC0BD300EE613D /* Event.swift */; };
 		88DE139E26B8953200256EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DE139D26B8953200256EB1 /* AppDelegate.swift */; };
 		88DE13A026B8953200256EB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DE139F26B8953200256EB1 /* SceneDelegate.swift */; };
 		88DE13A226B8953200256EB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DE13A126B8953200256EB1 /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 		88B328F326B89C4600CC22F8 /* Settings_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings_ViewController.swift; sourceTree = "<group>"; };
 		88B328FE26B8AF4200CC22F8 /* Menu_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu_ViewController.swift; sourceTree = "<group>"; };
 		88B3290726B8D16B00CC22F8 /* CaviarDreams.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams.ttf; sourceTree = "<group>"; };
+		88C2A27826BC0BD300EE613D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		88DE139A26B8953200256EB1 /* Housie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Housie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DE139D26B8953200256EB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88DE139F26B8953200256EB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				88E5E80C26B9E58100AF82EB /* HouseCell.swift */,
 				88E5E82B26BA119A00AF82EB /* BadgeCell.swift */,
 				88E5E82E26BA121900AF82EB /* Badge.swift */,
+				88C2A27826BC0BD300EE613D /* Event.swift */,
 			);
 			path = Housie;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				88E5E81B26B9FB1600AF82EB /* HDNotificationData.swift in Sources */,
 				88DE13A026B8953200256EB1 /* SceneDelegate.swift in Sources */,
 				88B328FF26B8AF4200CC22F8 /* Menu_ViewController.swift in Sources */,
+				88C2A27926BC0BD300EE613D /* Event.swift in Sources */,
 				88E5E81C26B9FB1600AF82EB /* HDNotificationView.swift in Sources */,
 				888BD72726B9492700956410 /* User.swift in Sources */,
 				888BD72A26B9497F00956410 /* House.swift in Sources */,
@@ -426,6 +430,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyberfacility.Housie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -446,6 +451,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyberfacility.Housie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -13,7 +13,7 @@ import BLTNBoard
 
 class Homes_ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    let bulletinManager: BLTNItemManager = {
+    lazy var bulletinManager: BLTNItemManager = {
         
         let page = BLTNPageItem(title: "Time to focus!")
         page.image = #imageLiteral(resourceName: "work2")
@@ -21,8 +21,19 @@ class Homes_ViewController: UIViewController, UICollectionViewDelegate, UICollec
         page.descriptionText = "While you do productive stuff the loan will be payed off 💵"
         page.actionButtonTitle = "Got it!"
         page.actionHandler = { (item: BLTNActionItem) in
+            self.vibratePhone()
             item.manager?.dismissBulletin(animated: true)
-        }
+            
+            let menuview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tasks_vc") as! Tasks_ViewController
+            
+            let nc = self.navigationController as! UINavigationController
+            let ncroot = nc.viewControllers[0] as! ViewController
+                
+                menuview.willMove(toParent: ncroot)
+                menuview.view.frame = ncroot.containerView.bounds
+                ncroot.containerView.addSubview(menuview.view)
+                ncroot.addChild(menuview)
+                menuview.didMove(toParent: ncroot)        }
         let rootItem: BLTNItem = page
         return BLTNItemManager(rootItem: rootItem)
         }()

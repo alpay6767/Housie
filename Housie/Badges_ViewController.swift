@@ -15,7 +15,7 @@ class Badges_ViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     static var selectedHouse = AppDelegate.currentUser?.listOfHouses[0]
     
-    let bulletinManager: BLTNItemManager = {
+    lazy var bulletinManager: BLTNItemManager = {
         
         
         
@@ -25,7 +25,22 @@ class Badges_ViewController: UIViewController, UICollectionViewDelegate, UIColle
         page.descriptionText = "Keep working and focusing on your tasks to pay off this house!"
         page.actionButtonTitle = "Lemme work!"
         page.actionHandler = { (item: BLTNActionItem) in
+            self.vibratePhone()
             item.manager?.dismissBulletin(animated: true)
+            
+            let menuview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tasks_vc") as! Tasks_ViewController
+            
+            let nc = self.navigationController as! UINavigationController
+            let ncroot = nc.viewControllers[0] as! ViewController
+                
+                menuview.willMove(toParent: ncroot)
+                menuview.view.frame = ncroot.containerView.bounds
+                ncroot.containerView.addSubview(menuview.view)
+                ncroot.addChild(menuview)
+                menuview.didMove(toParent: ncroot)
+            
+            
+            
         }
         let rootItem: BLTNItem = page
         return BLTNItemManager(rootItem: rootItem)
@@ -78,10 +93,63 @@ class Badges_ViewController: UIViewController, UICollectionViewDelegate, UIColle
         let currenthouse = AppDelegate.currentUser!.listOfHouses[indexPath.item]
         Badges_ViewController.selectedHouse = currenthouse
         
+        let page = BLTNPageItem(title: currenthouse.name!)
+        if (currenthouse.remainingPrice! <= 0) {
+            page.image = currenthouse.image
+            page.descriptionText = "You payed all the loans for it! Awesome 🤙"
+            page.actionButtonTitle = "Nice!"
+            
+            page.actionHandler = { (item: BLTNActionItem) in
+                self.vibratePhone()
+                item.manager?.dismissBulletin(animated: true)
+                
+                
+                
+                
+            }
+            
+        } else {
+            page.image = currenthouse.noimage
+            page.descriptionText = "You still have loans to pay for it .. 🧐 But u got this!"
+            page.actionButtonTitle = "Lemme work!"
+            
+            page.actionHandler = { (item: BLTNActionItem) in
+                self.vibratePhone()
+                item.manager?.dismissBulletin(animated: true)
+                let menuview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tasks_vc") as! Tasks_ViewController
+                
+                Tasks_ViewController.selecteHouseIndex = indexPath.item
+                
+
+                
+                let nc = self.navigationController as! UINavigationController
+                let ncroot = nc.viewControllers[0] as! ViewController
+                    
+                    menuview.willMove(toParent: ncroot)
+                    menuview.view.frame = ncroot.containerView.bounds
+                    ncroot.containerView.addSubview(menuview.view)
+                    ncroot.addChild(menuview)
+                    menuview.didMove(toParent: ncroot)
+                
+                
+                
+            }
+
+        }
+
+        
+        let rootItem: BLTNItem = page
+        
+        
         vibratePhone()
+        bulletinManager = BLTNItemManager(rootItem: rootItem)
         bulletinManager.showBulletin(above: self)
     }
     
     @IBAction func openmenu(_ sender: Any) {
+        menu = SideMenuManager.default.leftMenuNavigationController
+        self.present(menu!, animated: true) {
+            
+        }
     }
 }
