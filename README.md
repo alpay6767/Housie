@@ -1,6 +1,9 @@
 Loanie - Time to focus!
 This is a concentration App.
 
+Download the App:
+https://apps.apple.com/de/app/loanie-time-to-focus/id1579679872
+
 ![Bildschirmfoto 2024-09-30 um 15 00 29](https://github.com/user-attachments/assets/0dd258ef-0d43-41de-9865-9e0681b761c5)
 
 ## Staying focused by paying off your loans!
